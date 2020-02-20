@@ -13,3 +13,9 @@
    height: 150px;
    margin: 0 auto;
 }
+
+.del {
+   width: 30px;
+   margin: 5px;
+   cursor: pointer;
+}

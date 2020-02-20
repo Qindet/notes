@@ -1,4 +1,8 @@
 .for-form {
     width: 500px;
-    margin: 0 auto;
+    margin: 50px auto;
+}
+
+.back {
+    margin-left: 50px;
 }

@@ -3,27 +3,26 @@ import './note.css'
 
 export default class Note extends Component {
 
-    state = {
-        name: '',
-        author: '',
-        important: false,
-        main: '',
-        date: ''
-    }
 
     render() {
 
-
+        //{ name, author, important, text, date } = this.props.note
 
         return (
                 <div className="col mb-4">
                     <div className="card">
-                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcSNfwFoLQX_As6Km0agAKjxSjF3XihMFHEfX0fVMxUSzsSBXdrx" className="card-img-top image" alt="..."></img>
+                        <img className="del" src="http://cdn.onlinewebfonts.com/svg/img_286813.png" alt="sf"
+                             onClick={() => this.props.onDelete(this.props.note.id)}>
+                            </img>
+                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcSNfwFoLQX_As6Km0agAKjxSjF3XihMFHEfX0fVMxUSzsSBXdrx" className="card-img-top image" alt="sf"></img>
                             <div className="card-body">
-                                <h5 className="card-title">Название заметки</h5>
-                                <h6 className="card-title">Имя</h6>
-                                <p className="card-text">This is a longer card with supporting text below as a natural
-                                    lead-in to additional content. This content is a little bit longer.</p>
+                                {this.props.note.important === 'Важная'  ?
+                                    <span className="badge badge-danger">Важная заметка</span>
+                                    : < span className = "badge badge-success"> Не важная заметка </span>}
+                                <h5 className="card-title">{this.props.note.name}</h5>
+                                <h6 className="card-title">{this.props.note.author}</h6>
+                                <p className="card-text">{this.props.note.main}</p>
+                                <p>{this.props.note.date}</p>
                             </div>
                     </div>
                 </div>
