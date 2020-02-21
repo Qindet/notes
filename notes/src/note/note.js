@@ -11,9 +11,10 @@ export default class Note extends Component {
         return (
                 <div className="col mb-4">
                     <div className="card">
-                        <img className="del" src="http://cdn.onlinewebfonts.com/svg/img_286813.png" alt="sf"
+                        <img className="del" src="./images/del.png" alt="sf"
                              onClick={() => this.props.onDelete(this.props.note.id)}>
                             </img>
+
                         <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcSNfwFoLQX_As6Km0agAKjxSjF3XihMFHEfX0fVMxUSzsSBXdrx" className="card-img-top image" alt="sf"></img>
                             <div className="card-body">
                                 {this.props.note.important === 'Важная'  ?

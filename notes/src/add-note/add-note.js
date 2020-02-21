@@ -28,8 +28,11 @@ export default class AddNote extends Component {
 
     inputChange = (e) => {
         const target = e.target
-        const value = target.value
+        let value = target.value
         const name = target.name
+        if (value.length > 10 && name === 'main') {
+           value = value.slice(0,50)
+        }
         this.setState({
             [name]: value
         })
@@ -63,7 +66,7 @@ export default class AddNote extends Component {
                     <label htmlFor="exampleFormControlTextarea1">Текст заметки</label>
                     <textarea name="main" className="form-control" id="exampleFormControlTextarea1" rows="3"
                               onChange={this.inputChange} value={this.state.main}></textarea>
-                </div>ы
+                </div>
                 <div className="form-group">
                     <label htmlFor="exampleFormControlInput1">Дата</label>
                     <input type="date" name="date" className="form-control" id="exampleFormControlInput3"

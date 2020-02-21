@@ -48,10 +48,15 @@ export default class App extends Component {
 
     render() {
 
-    const res = this.state.notes.map((item) => {
+
+
+    let res = this.state.notes.map((item) => {
             return <Note note={item} key={item.id++} onDelete={this.onDelete}/>
         })
 
+        if (res.length === 0) {
+            res = <h2 style={{marginLeft: "50px", marginTop: "50px"}}>Заметок нет</h2>
+        }
 
         return (
         <Router>
